@@ -4,7 +4,7 @@
   "description": "An example project running e2e tests with TestCafe",
   "main": "index.js",
   "scripts": {
-    "test": "testcafe chrome tests/qsTest.js",
+    "test": "testcafe chrome tests/",
     "test:all": "testcafe -c 3 chrome:headless,firefox:headless tests/",
     "test:firefox": "testcafe -c 3 firefox:headless tests/"
   },
