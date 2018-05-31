@@ -2,6 +2,9 @@
   "name": "testcafe-example",
   "version": "1.0.0",
   "description": "An example project running e2e tests with TestCafe",
+  "engines": {
+    "node": "8.11.2"
+  },
   "main": "index.js",
   "scripts": {
     "test": "testcafe chrome tests/",
