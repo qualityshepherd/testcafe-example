@@ -17,7 +17,6 @@ class SearchModule extends BasePage {
     /**
      * Search blog posts
      * @param  {string}
-     * @return {promise}
      */
     async forText(text) {
         await t

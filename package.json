@@ -9,7 +9,7 @@
   "scripts": {
     "test": "testcafe chrome tests/",
     "test:all": "testcafe -c 3 chrome:headless,firefox:headless tests/",
-    "test:firefox": "testcafe -c 3 firefox:headless tests/"
+    "test:firefox": "testcafe -c 3 firefox tests/"
   },
   "author": "Brine",
   "license": "MIT",

@@ -9,16 +9,17 @@ fixture `Quality Shepherd blog`
     });
 
     test('should return search results', async t =>  {
-        qsHomePage.search.forText('protractor')
+        await qsHomePage.search.forText('protractor')
 
-        await  t.expect(qsHomePage.search.resultsPage.exists).ok()
-                .expect(qsHomePage.posts.count).gt(0);
+        await t
+            .expect(qsHomePage.search.resultsPage.exists).ok()
+            .expect(qsHomePage.posts.count).gt(0);
     });
 
     test('unfound search term should return no results', async t =>  {
-        qsHomePage.search.forText('sfdslkjsfkjslkdf');
+        await qsHomePage.search.forText('sfdslkjsfkjslkdf');
 
-        await  t.expect(qsHomePage.search.noResultsMsg.with({ visibilityCheck: true })).ok();
+        await t.expect(qsHomePage.search.noResultsMsg.with({ visibilityCheck: true })).ok();
     });
 
     // switching windows is coming... testcafe currently opens new windows in _self
@@ -26,7 +27,6 @@ fixture `Quality Shepherd blog`
     test('should open social media link in new window', async t =>  {
         await t
             .click(qsHomePage.githubLink)
-
             .expect(githubPage.isLoaded).ok()
 
             // cleanup
@@ -35,4 +35,11 @@ fixture `Quality Shepherd blog`
 
     test('sidebar should have a set width', async t =>  {
         await t.expect(qsHomePage.sidebar.clientWidth).eql(280);
+    });
+
+    test('should find an older post by paging', async t =>  {
+        const postTitle = 'Protractor: How To Page Object';
+        await qsHomePage.findPostByPaging(postTitle);
+
+        await t.expect(await qsHomePage.postTitleExists(postTitle)).ok();
     });
