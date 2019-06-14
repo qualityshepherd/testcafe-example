@@ -10,7 +10,7 @@
     "testcafe": "./node_modules/.bin/testcafe",
     "test": "npm run testcafe chrome tests/",
     "all": "npm run testcafe -- -c 2 chrome:headless,firefox:headless tests/",
-    "cli": "npm run all",
+    "cli": "npm run testcafe -- -c 2 chrome:headless tests/",
     "safari": "npm run testcafe safari tests/",
     "firefox": "npm run testcafe firefox tests/"
   },
