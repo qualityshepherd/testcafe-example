@@ -9,7 +9,8 @@
   "scripts": {
     "testcafe": "./node_modules/.bin/testcafe",
     "test": "npm run testcafe chrome tests/",
-    "all": "npm run testcafe -c 2 chrome:headless,firefox:headless tests/",
+    "all": "npm run testcafe -- -c 2 chrome:headless,firefox:headless tests/",
+    "cli": "npm run all",
     "safari": "npm run testcafe safari tests/",
     "firefox": "npm run testcafe firefox tests/"
   },
