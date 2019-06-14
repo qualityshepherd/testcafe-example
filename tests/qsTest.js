@@ -1,8 +1,10 @@
 import qsHomePage from '../pages/qsHomePage';
 import githubPage from '../pages/githubPage';
 
-fixture `Quality Shepherd blog`
-    .page `${qsHomePage.url}`
+// someday Testcafe will have a `beforeAll`
+fixture `Quality Shepherd blog`.beforeEach(async (t) => {
+  await qsHomePage.goto();
+});
 
     test('should display 5 posts per page', async t => {
         await t.expect(qsHomePage.posts.count).eql(5);

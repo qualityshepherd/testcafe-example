@@ -5,7 +5,7 @@ import search from './searchModule';
 class QsHomePage extends BasePage {
     constructor() {
         super();
-        this.url                = 'http://qualityshepherd.com';
+        this.url                = `${this.baseUrl}/`;
 
         // include modules...
         this.search             = search;

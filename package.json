@@ -7,14 +7,17 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "testcafe chrome tests/",
-    "test:all": "testcafe -c 3 chrome:headless,firefox:headless tests/",
-    "test:safari": "testcafe -c 3 firefox tests/",
-    "test:firefox": "testcafe -c 3 firefox tests/"
+    "testcafe": "./node_modules/.bin/testcafe",
+    "test": "npm run testcafe chrome tests/",
+    "all": "npm run testcafe -c 2 chrome:headless,firefox:headless tests/",
+    "safari": "npm run testcafe safari tests/",
+    "firefox": "npm run testcafe firefox tests/"
   },
   "author": "Brine",
   "license": "MIT",
   "dependencies": {
-    "testcafe": "^0.20.2"
+    "minimist": "^1.2.0",
+    "node-fetch": "^2.6.0",
+    "testcafe": "^1.2.1"
   }
 }
