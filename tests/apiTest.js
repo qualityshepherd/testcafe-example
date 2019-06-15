@@ -8,7 +8,7 @@ test('should return last 10 posts', async (t) => {
   await t.expect(await response.length).eql(10);
 });
 
-test.only('should search categories', async (t) => {
+test('should search categories', async (t) => {
   const response = await api.searchForCategorie('Blather');
 
   await t.expect(await response.length).eql(1);
