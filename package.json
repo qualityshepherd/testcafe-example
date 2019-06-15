@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "An example project running e2e tests with TestCafe",
   "engines": {
-    "node": "8.11.2"
+    "node": "10.16.0"
   },
   "main": "index.js",
   "scripts": {
