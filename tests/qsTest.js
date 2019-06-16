@@ -29,10 +29,7 @@ fixture `Quality Shepherd blog`.beforeEach(async (t) => {
   test('should open social media link in new window', async t =>  {
     await t
       .click(qsHomePage.githubLink)
-      .expect(githubPage.isLoaded).ok()
-
-      // cleanup
-      .navigateTo(qsHomePage.url);
+      .expect(githubPage.isLoaded).ok();
   });
 
   test('sidebar should have a set width', async t =>  {
