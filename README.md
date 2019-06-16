@@ -6,6 +6,7 @@ Example e2e tests (some of which are slightly silly) written in [Testcafe](https
 - run in parallel
 - run on multiple browsers
 - run headlessly
+- run api tests
 
 ## Setup
 1. clone `clone git@github.com:qualityshepherd/testcafe-example.git`
