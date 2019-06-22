@@ -13,3 +13,6 @@ Example e2e tests (some of which are slightly silly) written in [Testcafe](https
 2. install `npm i`
 3. run `npm test` to watch in browser, or `npm run all` to run parallel, headless, on Chrome and Firefox or `npm run` to see more options
 
+---
+
+![Test Run Gif](https://qualityshepherd.com/screencasts/testrun.gif)
