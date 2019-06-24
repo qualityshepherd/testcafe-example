@@ -11,7 +11,7 @@ fixture `Quality Shepherd blog`.beforeEach(async (t) => {
   });
 
   test('should return search results', async t =>  {
-    await qsHomePage.search.forText('protractor')
+    await qsHomePage.search.forText('testcafe')
 
     await t
       .expect(qsHomePage.search.resultsPage.exists).ok()
