@@ -20,4 +20,4 @@ Example e2e tests (some of which are slightly silly) written in [Testcafe](https
 ![Test Run Gif](https://qualityshepherd.com/screencasts/testrun.gif)
 
 ---
-[![Browserstack Logo](https://qualityshepherd.com/Browserstack-logo@2x.png)](https://browserstack.com)
+[![Browserstack Logo](https://qualityshepherd.com/browserstack_logo.png)](https://browserstack.com)
