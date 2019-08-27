@@ -1,4 +1,4 @@
-[![Codeship Status for qualityshepherd/testcafe-example](https://app.codeship.com/projects/833a4d80-7100-0137-f6e1-16b3e657657a/status?branch=master)](https://app.codeship.com/projects/348317). [![BrowserStack Status](https://www.browserstack.com/automate/badge.svg?badge_key=YXhPNlJhUHl6U2NuMGxIN3pNNmxCUT09LS10K3FXaHdoTlFPanJBam5lVkdaYzhRPT0=--a9135a7dae970aebc64df6be02dbd5a871761883)](https://www.browserstack.com/automate/public-build/)
+[![Codeship Status for qualityshepherd/testcafe-example](https://app.codeship.com/projects/833a4d80-7100-0137-f6e1-16b3e657657a/status?branch=master)](https://app.codeship.com/projects/348317).
 
 
 ## Testcafe Example
@@ -25,6 +25,3 @@ Example e2e tests (some of which are slightly silly) written in [Testcafe](https
 ---
 
 ![Test Run Gif](https://qualityshepherd.com/screencasts/testrun.gif)
-
----
-[![Browserstack Logo](https://qualityshepherd.com/browserstack_logo.png)](https://browserstack.com)
