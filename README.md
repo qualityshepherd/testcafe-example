@@ -3,7 +3,7 @@
 
 ## Testcafe Example
 Example e2e tests (some of which are slightly silly) written in [Testcafe](https://github.com/DevExpress/testcafe), that:
-- use a page object pattern
+- use a page object pattern (now with 100% _less class_)
 - are written in Javascript es6
 - use async/await
 - run in parallel
