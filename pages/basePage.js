@@ -5,10 +5,8 @@ import minimist from "minimist";
 const args = minimist(process.argv.slice(2));
 const env = args.env || "https://qualityshepherd.com";
 
-export default class BasePage {
-  constructor() {
-    this.baseUrl = env;
-  }
+const basePage = {
+  baseUrl: env,
 
   /**
    * wrapper for navigateTo so we can use relative urls and append them to baseUrl
@@ -18,10 +16,11 @@ export default class BasePage {
   async goto(relativeUrl = null) {
     if (relativeUrl) {
       // navigate via relative paths
-      await t.navigateTo(`${this.url}${relativeUrl}`);
+      await t.navigateTo(`${this.baseUrl}${this.url}${relativeUrl}`);
     } else {
       // get url from page object
-      await t.navigateTo(this.url);
+      await t.navigateTo(`${this.baseUrl}${this.url}`);
     }
   }
 }
+export default basePage

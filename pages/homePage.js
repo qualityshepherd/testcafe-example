@@ -1,22 +1,18 @@
 import { Selector as $, t } from 'testcafe';
-import BasePage from './basePage';
+import basePage from './basePage';
 import search from './searchModule';
 
-class QsHomePage extends BasePage {
-  constructor() {
-    super();
-    this.url                = `${this.baseUrl}/`;
-
+const homePage = {
+    url:               '',
     // include modules...
-    this.search             = search;
+    search:            search,
 
-    this.posts              = $('div.post');
-    this.postTitleLinks     = $('h2 a');
-    this.siteTitle          = $('h1 a');
-    this.sidebar            = $('div#sidebar');
-    this.githubLink         = $('a#githubLink');
-    this.prevPageLink       = $('a').withText('← Older Entries');
-  }
+    posts:             $('div.post'),
+    postTitleLinks:    $('h2 a'),
+    siteTitle:         $('h1 a'),
+    sidebar:           $('div#sidebar'),
+    githubLink:        $('a#githubLink'),
+    prevPageLink:      $('a').withText('← Older Entries'),
 
   /**
    * test if post title exists
@@ -25,7 +21,7 @@ class QsHomePage extends BasePage {
    */
   async postTitleExists(postTitle) {
     return await $('a').withText(postTitle).exists;
-  }
+  },
 
   /**
    * Page back till we find the post title or run out of posts
@@ -44,4 +40,4 @@ class QsHomePage extends BasePage {
     }
   }
 }
-export default new QsHomePage();
+export default {...basePage, ...homePage}

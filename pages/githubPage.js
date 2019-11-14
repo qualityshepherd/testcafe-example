@@ -1,12 +1,8 @@
-import { Selector as $, t } from 'testcafe';
-import BasePage from './basePage';
+import { Selector as $ } from 'testcafe';
+import basePage from './basePage';
 
-class GithubPage extends BasePage {
-  constructor() {
-    super();
-    this.url        = 'https://github.com/qualityshepherd';
-    this.username   = $('.vcard-names');
-    this.isLoaded   = this.username.with({ visibilityCheck: true });
-  }
+const githubPage = {
+    url:      'https://github.com/qualityshepherd/',
+    username: $('.vcard-names')
 }
-export default new GithubPage();
+export default {...basePage, ...githubPage}
