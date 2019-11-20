@@ -3,16 +3,15 @@ import basePage from './basePage';
 import search from './searchModule';
 
 const homePage = {
-    url:               '',
-    // include modules...
-    search:            search,
-
-    posts:             $('div.post'),
-    postTitleLinks:    $('h2 a'),
-    siteTitle:         $('h1 a'),
-    sidebar:           $('div#sidebar'),
-    githubLink:        $('a#githubLink'),
-    prevPageLink:      $('a').withText('← Older Entries'),
+  url:               '',
+  // include modules...
+  search,
+  posts:          $('div.post'),
+  postTitleLinks: $('h2 a'),
+  siteTitle:      $('h1 a'),
+  sidebar:        $('div#sidebar'),
+  githubLink:     $('a#githubLink'),
+  prevPageLink:   $('a').withText('← Older Entries'),
 
   /**
    * test if post title exists
@@ -29,15 +28,8 @@ const homePage = {
    * @return {bool}
    */
   async findPostByPaging(postTitle) {
-    if(await this.postTitleExists(postTitle)) {
-        return true;
-    } else if(await this.prevPageLink.exists) {
-        await t.click(this.prevPageLink);
-        await this.findPostByPaging(postTitle); // call recursively till found...
-    } else {
-        // post not found
-        return false;
-    }
+    await t.click(this.prevPageLink);
+    await this.postTitleExists(postTitle) ? true : await this.findPostByPaging(postTitle);
   }
 }
 export default {...basePage, ...homePage}
