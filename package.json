@@ -21,7 +21,7 @@
   "dependencies": {
     "minimist": "^1.2.0",
     "node-fetch": "^2.6.0",
-    "testcafe": "^1.6.1",
+    "testcafe": "^1.7.0",
     "testcafe-browser-provider-browserstack": "^1.8.0"
   }
 }

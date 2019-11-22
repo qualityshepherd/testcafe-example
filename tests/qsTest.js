@@ -2,7 +2,7 @@ import homePage from '../pages/homePage';
 import githubPage from '../pages/githubPage';
 
 // someday Testcafe will have a `beforeAll`
-fixture `Quality Shepherd blog`.beforeEach(async (t) => {
+fixture `Quality Shepherd blog`.beforeEach(async t => {
   await homePage.goto();
 });
 
