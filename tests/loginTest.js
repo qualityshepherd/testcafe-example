@@ -12,11 +12,8 @@ test('should log into QualityShepherd.com', async t => {
     .expect(homePage.siteTitle.exists).ok();
 });
 
-// Roles navigates/refreshes page before we can get the error msg
-// so we 'role' our own (see what I did there?)
 test('invalid credentials should display error', async t => {
-  await loginPage.goto();
-  await loginPage.login('invalid_username', 'invalid_password');
-
-  await t.expect(loginPage.errorMsg.visible).ok();
+  await t
+    .useRole(invalidUser)
+    .expect(loginPage.errorMsg.visible).notOk();
 });

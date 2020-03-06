@@ -9,7 +9,7 @@ test('should return last 10 posts', async t => {
 });
 
 test('should search categories', async t => {
-  const response = await api.searchForCategorie('Blather');
+  const response = await api.searchForCategory('Blather');
 
   await t.expect(await response.length).eql(1);
 });
