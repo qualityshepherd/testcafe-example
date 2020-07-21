@@ -6,22 +6,22 @@ fixture `Quality Shepherd blog`.beforeEach(async t => {
   await homePage.goto();
 });
 
-test('should display 5 posts per page', async t => {
-  await t.expect(homePage.posts.count).eql(5);
+test('should display n posts per page', async t => {
+  await t.expect(homePage.posts.count).eql(7);
 });
 
 test('should return search results', async t =>  {
+  await homePage.search.goto();
   await homePage.search.forText('testcafe')
 
-  await t
-    .expect(homePage.search.resultsPage.exists).ok()
-    .expect(homePage.posts.count).gt(0);
+  await t.expect(homePage.search.results.count).gt(0);
 });
 
 test('unfound search term should return no results', async t =>  {
+  await homePage.search.goto();
   await homePage.search.forText('sfdslkjsfkjslkdf');
 
-  await t.expect(homePage.search.noResultsMsg.with({ visibilityCheck: true })).ok();
+  await t.expect(homePage.search.noResultsMsg.visible).ok();
 });
 
 // switching windows is coming... testcafe currently opens new windows in _self
@@ -30,10 +30,6 @@ test('should open social media link in new window', async t =>  {
   await t
     .click(homePage.githubLink)
     .expect(githubPage.username.visible).ok();
-});
-
-test('sidebar should have a set width', async t =>  {
-  await t.expect(homePage.sidebar.clientWidth).eql(280);
 });
 
 test('should find an older post by paging', async t =>  {

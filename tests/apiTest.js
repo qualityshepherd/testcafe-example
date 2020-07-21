@@ -2,14 +2,16 @@ import * as api from '../lib/apiModule';
 
 fixture`API`;
 
-test('should return last 10 posts', async t => {
-  const response = await api.getPosts();
+test('should return a random fact', async t => {
+  const response = await api.getRandomFact();
 
-  await t.expect(await response.length).eql(10);
+  await t.expect(await response.status.sentCount).eql(1);
 });
 
-test('should search categories', async t => {
-  const response = await api.searchForCategory('Blather');
+test('should get cat by id', async t => {
+  const id = '5de780600013130015a3ccaf';
+  const response = await api.getCatById(id);
 
-  await t.expect(await response.length).eql(1);
+  await t.
+    expect(await response._id).eql(id);
 });

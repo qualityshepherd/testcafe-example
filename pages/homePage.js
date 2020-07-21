@@ -8,10 +8,9 @@ const homePage = {
   search,
   posts:          $('div.post'),
   postTitleLinks: $('h2 a'),
-  siteTitle:      $('h1 a'),
-  sidebar:        $('div#sidebar'),
-  githubLink:     $('a#githubLink'),
-  prevPageLink:   $('a').withText('← Older Entries'),
+  siteTitle:      $('h1'),
+  githubLink:     $('#github-social'),
+  nextPageLink:   $('.next'),
 
   /**
    * test if post title exists
@@ -28,7 +27,7 @@ const homePage = {
    * @return {bool}
    */
   async findPostByPaging(postTitle) {
-    await t.click(this.prevPageLink);
+    await t.click(this.nextPageLink);
     await this.postTitleExists(postTitle) ? true : await this.findPostByPaging(postTitle);
   }
 }

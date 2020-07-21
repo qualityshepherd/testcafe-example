@@ -1,14 +1,16 @@
 import { Selector as $, t } from 'testcafe';
+import basePage from './basePage';
 
 /**
- * search exists on multiple pages so we make it a module
+ * search can exist on multiple pages so we make it a module
  * that we can then require on multiple pages
  */
 const searchModule = {
-    box:          $('input#s'),
-    searchBtn:    $('#searchbtn'),
-    resultsPage:  $('body.search'),
-    noResultsMsg: $('h2').withText('No posts found. Please try a different search.'),
+  url:          '?search',
+  box:          $('#search_input'),
+  searchBtn:    $('[type="submit"]'),
+  results: $('.search-result'),
+  noResultsMsg: $('#no-results'),
 
   /**
    * Search blog posts
@@ -20,4 +22,4 @@ const searchModule = {
       .click(this.searchBtn);
   }
 }
-export default searchModule
+export default {...basePage, ...searchModule}
