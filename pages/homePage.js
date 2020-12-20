@@ -7,10 +7,9 @@ const homePage = {
   // include modules...
   search,
   posts:          $('div.post'),
-  postTitleLinks: $('h2 a'),
   siteTitle:      $('h1'),
   githubLink:     $('#github-social'),
-  nextPageLink:   $('.next'),
+  loadMoreBtn:   $('#load-more'),
 
   /**
    * test if post title exists
@@ -27,7 +26,7 @@ const homePage = {
    * @return {bool}
    */
   async findPostByPaging(postTitle) {
-    await t.click(this.nextPageLink);
+    await t.click(this.loadMoreBtn);
     await this.postTitleExists(postTitle) ? true : await this.findPostByPaging(postTitle);
   }
 }

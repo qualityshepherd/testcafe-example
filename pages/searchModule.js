@@ -6,10 +6,8 @@ import basePage from './basePage';
  * that we can then require on multiple pages
  */
 const searchModule = {
-  url:          '?search',
-  box:          $('#search_input'),
-  searchBtn:    $('[type="submit"]'),
-  results: $('.search-result'),
+  box:          $('#search'),
+  results: $('.post-title'),
   noResultsMsg: $('#no-results'),
 
   /**
@@ -19,7 +17,7 @@ const searchModule = {
   async forText(text) {
     await t
       .typeText(this.box, text)
-      .click(this.searchBtn);
+      .pressKey('enter');
   }
 }
 export default {...basePage, ...searchModule}

@@ -2,10 +2,10 @@ import * as api from '../lib/apiModule';
 
 fixture`API`;
 
-test('should return a random fact', async t => {
-  const response = await api.getRandomFact();
+test('should return n random facts', async t => {
+  const response = await api.getRandomFact(2);
 
-  await t.expect(await response.status.sentCount).eql(1);
+  await t.expect(await response.length).eql(2);
 });
 
 test('should get cat by id', async t => {

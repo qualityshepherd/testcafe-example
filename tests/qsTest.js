@@ -11,14 +11,12 @@ test('should display n posts per page', async t => {
 });
 
 test('should return search results', async t =>  {
-  await homePage.search.goto();
   await homePage.search.forText('testcafe')
 
   await t.expect(homePage.search.results.count).gt(0);
 });
 
 test('unfound search term should return no results', async t =>  {
-  await homePage.search.goto();
   await homePage.search.forText('sfdslkjsfkjslkdf');
 
   await t.expect(homePage.search.noResultsMsg.visible).ok();
@@ -33,7 +31,7 @@ test('should open social media link in new window', async t =>  {
 });
 
 test('should find an older post by paging', async t =>  {
-  const postTitle = 'Protractor: How To Page Object';
+  const postTitle = 'Protractor - How To Page Object';
   await homePage.findPostByPaging(postTitle);
 
   await t.expect(await homePage.postTitleExists(postTitle)).ok();
