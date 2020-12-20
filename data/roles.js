@@ -1,7 +1,7 @@
-import { Role } from "testcafe";
-import loginPage from "../pages/loginPage";
+import { Role } from "testcafe"
+import loginPage from "../pages/loginPage"
 
-const loginPageUrl = `${loginPage.baseUrl}${loginPage.url}`;
+const loginPageUrl = `${loginPage.baseUrl}${loginPage.url}`
 
 /**
  * Testcafe uses `Roles` to define user roles for logins that are triggered only _once_ per test file.
@@ -14,24 +14,24 @@ const loginPageUrl = `${loginPage.baseUrl}${loginPage.url}`;
  *
  * To use in your test file...
  *
- * import { test } from '../data/roles';
+ * import { test } from '../data/roles'
  * ...
  * .beforeEach(async t => {
- *      await t.useRole(test);
+ *      await t.useRole(test)
  */
 
 export const validUser = Role(
   loginPageUrl,
   async () => {
-    await loginPage.login("test", 'test');
+    await loginPage.login("test", 'test')
   },
   { preserveUrl: true }
-);
+)
 
 export const invalidUser = Role(
   loginPageUrl,
   async () => {
-    await loginPage.login("invalid", 'user');
+    await loginPage.login("invalid", 'user')
   },
   { preserveUrl: true }
-);
+)

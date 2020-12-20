@@ -1,5 +1,5 @@
-import { Selector as $, t } from 'testcafe';
-import basePage from './basePage';
+import { Selector as $, t } from 'testcafe'
+import basePage from './basePage'
 
 /**
  * search can exist on multiple pages so we make it a module
@@ -17,7 +17,7 @@ const searchModule = {
   async forText(text) {
     await t
       .typeText(this.box, text)
-      .pressKey('enter');
+      .pressKey('enter')
   }
 }
 export default {...basePage, ...searchModule}

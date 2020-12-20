@@ -1,5 +1,5 @@
-import { Selector as $, t } from 'testcafe';
-import basePage from './basePage';
+import { Selector as $, t } from 'testcafe'
+import basePage from './basePage'
 
 const loginPage = {
   url:            'login/',
@@ -12,7 +12,7 @@ const loginPage = {
     await t
       .typeText(this.usernameInput, username)
       .typeText(this.passwordInput, password)
-      .click(this.loginBtn);
+      .click(this.loginBtn)
   }
 }
 export default {...basePage, ...loginPage}

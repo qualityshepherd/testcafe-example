@@ -1,6 +1,6 @@
-import { Selector as $, t } from 'testcafe';
-import basePage from './basePage';
-import search from './searchModule';
+import { Selector as $, t } from 'testcafe'
+import basePage from './basePage'
+import search from './searchModule'
 
 const homePage = {
   url:               '',
@@ -17,7 +17,7 @@ const homePage = {
    * @return {bool}
    */
   async postTitleExists(postTitle) {
-    return await $('a').withText(postTitle).exists;
+    return await $('a').withText(postTitle).exists
   },
 
   /**
@@ -26,8 +26,8 @@ const homePage = {
    * @return {bool}
    */
   async findPostByPaging(postTitle) {
-    await t.click(this.loadMoreBtn);
-    await this.postTitleExists(postTitle) ? true : await this.findPostByPaging(postTitle);
+    await t.click(this.loadMoreBtn)
+    await this.postTitleExists(postTitle) ? true : await this.findPostByPaging(postTitle)
   }
 }
 export default {...basePage, ...homePage}
