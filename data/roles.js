@@ -1,5 +1,5 @@
-import { Role } from "testcafe"
-import loginPage from "../pages/loginPage"
+import { Role } from 'testcafe'
+import loginPage from '../pages/loginPage'
 
 const loginPageUrl = `${loginPage.baseUrl}${loginPage.url}`
 
@@ -23,7 +23,7 @@ const loginPageUrl = `${loginPage.baseUrl}${loginPage.url}`
 export const validUser = Role(
   loginPageUrl,
   async () => {
-    await loginPage.login("test", 'test')
+    await loginPage.login('test', 'test')
   },
   { preserveUrl: true }
 )
@@ -31,7 +31,7 @@ export const validUser = Role(
 export const invalidUser = Role(
   loginPageUrl,
   async () => {
-    await loginPage.login("invalid", 'user')
+    await loginPage.login('invalid', 'user')
   },
   { preserveUrl: true }
 )

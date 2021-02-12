@@ -5,9 +5,20 @@
   "engines": {
     "node": "12.13.0"
   },
-  "main": "index.js",
+  "standard": {
+    "globals": [
+      "t",
+      "fixture",
+      "test"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "standard --fix"
+    }
+  },
   "scripts": {
-    "testcafe": "./node_modules/.bin/testcafe",
+    "testcafe": "testcafe",
     "test": "npm run testcafe chrome tests/",
     "all": "npm run testcafe -- -c 2 chrome:headless,firefox:headless tests/",
     "cli": "npm run testcafe -- -c 2 chrome:headless tests/",
@@ -19,9 +30,11 @@
   "author": "Brine",
   "license": "MIT",
   "dependencies": {
+    "husky": "^4.3.8",
     "minimist": "^1.2.5",
     "node-fetch": "^2.6.1",
-    "testcafe": "^1.10.0",
+    "standard": "^16.0.3",
+    "testcafe": "^1.10.1",
     "testcafe-browser-provider-browserstack": "^1.13.1"
   }
 }

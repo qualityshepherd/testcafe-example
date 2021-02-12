@@ -6,7 +6,7 @@ import basePage from './basePage'
  * that we can then require on multiple pages
  */
 const searchModule = {
-  box:          $('#search'),
+  box: $('#search'),
   results: $('.post-title'),
   noResultsMsg: $('#no-results'),
 
@@ -14,10 +14,10 @@ const searchModule = {
    * Search blog posts
    * @param  {string}
    */
-  async forText(text) {
+  async forText (text) {
     await t
       .typeText(this.box, text)
       .pressKey('enter')
   }
 }
-export default {...basePage, ...searchModule}
+export default { ...basePage, ...searchModule }

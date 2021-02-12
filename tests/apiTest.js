@@ -12,6 +12,6 @@ test('should get cat by id', async t => {
   const id = '5de780600013130015a3ccaf'
   const response = await api.getCatById(id)
 
-  await t.
-    expect(await response._id).eql(id)
+  await t
+    .expect(await response._id).eql(id)
 })
