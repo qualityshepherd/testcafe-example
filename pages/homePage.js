@@ -6,7 +6,7 @@ const homePage = {
   url: '',
   // include modules...
   search,
-  posts: $('div.post'),
+  posts: $('.post-title'),
   siteTitle: $('h1'),
   githubLink: $('#github-social'),
   loadMoreBtn: $('#load-more'),

@@ -24,16 +24,14 @@
     "safari": "npm run testcafe safari tests/",
     "firefox": "npm run testcafe firefox tests/",
     "browsers": "npm run testcafe -- -b browserstack",
-    "ie": "npm run testcafe 'browserstack:ie@11.0:Windows 10' tests/"
+    "ie": "npm run testcafe 'browserstack:ie@11.0:Windows 10' tests/",
+    "pretty": "npx standard --fix"
   },
   "author": "Brine",
   "license": "MIT",
   "dependencies": {
-    "husky": "^4.3.8",
     "minimist": "^1.2.5",
-    "node-fetch": "^2.6.1",
-    "standard": "^16.0.3",
-    "testcafe": "^1.15.0",
+    "testcafe": "^1.18.3",
     "testcafe-browser-provider-browserstack": "^1.13.1"
   }
 }
