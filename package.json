@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "An example project running e2e tests with TestCafe",
   "engines": {
-    "node": "12.13.0"
+    "node": ">=16"
   },
   "standard": {
     "globals": [
@@ -11,11 +11,6 @@
       "fixture",
       "test"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "standard --fix"
-    }
   },
   "scripts": {
     "testcafe": "testcafe",
