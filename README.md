@@ -1,3 +1,4 @@
+[![E2E Tests](https://github.com/qualityshepherd/testcafe-example/actions/workflows/e2e.yaml/badge.svg)](https://github.com/qualityshepherd/testcafe-example/actions/workflows/e2e.yaml)
 
 ## Testcafe Example
 Example e2e tests (some of which are slightly silly) written in [Testcafe](https://github.com/DevExpress/testcafe), that:
