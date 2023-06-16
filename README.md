@@ -27,4 +27,4 @@ Testcafe is really good; I used it for years but it has two issues that ultimate
 
 ---
 
-![Test Run Gif](https://qualityshepherd.com/screencasts/testrun.gif)
+![Test Run Gif](https://qualityshepherd.com/screencasts/testcafe.gif)
