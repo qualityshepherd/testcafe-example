@@ -1,5 +1,3 @@
-[![Codeship Status for qualityshepherd/testcafe-example](https://app.codeship.com/projects/833a4d80-7100-0137-f6e1-16b3e657657a/status?branch=master)](https://app.codeship.com/projects/348317).
-
 
 ## Testcafe Example
 Example e2e tests (some of which are slightly silly) written in [Testcafe](https://github.com/DevExpress/testcafe), that:
@@ -20,6 +18,11 @@ Example e2e tests (some of which are slightly silly) written in [Testcafe](https
 * `npm run all` to run parallel, headless, on Chrome and Firefox or
 * `npm run browserstack` to run tests in the cloud (requires an account and env keys to be set)
 * `npm run` to see more options
+
+## Feedback
+Testcafe is really good; I used it for years but it has two issues that ultimately became deal-breakers for me:
+1. no `beforeAll` which sucks on it's own but also means you have to use `Roles`... which _really_ sucks.
+2. they shard/thread tests at the _test level_ instead of the _file level_.
 
 ---
 

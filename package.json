@@ -14,19 +14,19 @@
   },
   "scripts": {
     "testcafe": "testcafe",
-    "test": "npm run testcafe chrome tests/",
-    "all": "npm run testcafe -- -c 2 chrome:headless tests/",
-    "safari": "npm run testcafe safari tests/",
-    "firefox": "npm run testcafe firefox tests/",
-    "browsers": "npm run testcafe -- -b browserstack",
-    "ie": "npm run testcafe 'browserstack:ie@11.0:Windows 10' tests/",
-    "pretty": "npx standard --fix"
+    "test": "testcafe chrome tests/",
+    "ci": "testcafe -c 2 -q attemptLimit=2,successThreshold=1 chrome:headless tests/",
+    "firefox": "testcafe firefox tests/",
+    "browsers": "testcafe -- -b browserstack",
+    "ie": "testcafe 'browserstack:ie@11.0:Windows 10' tests/",
+    "pretty": "standard --fix"
   },
   "author": "Brine",
   "license": "MIT",
   "dependencies": {
     "minimist": "^1.2.5",
-    "testcafe": "^1.18.3",
-    "testcafe-browser-provider-browserstack": "^1.13.1"
+    "standard": "^17.1.0",
+    "testcafe": "2.6.2",
+    "testcafe-browser-provider-browserstack": "^1.13.2"
   }
 }
