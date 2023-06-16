@@ -16,9 +16,9 @@ Example e2e tests (some of which are slightly silly) written in [Testcafe](https
 
 ## Run
 * run `npm test` to watch in browser, or
-* `npm run all` to run parallel, headless, on Chrome and Firefox or
+* `npm run ci` to run parallel, headless, and retry fails on Chrome
 * `npm run browserstack` to run tests in the cloud (requires an account and env keys to be set)
-* `npm run` to see more options
+* `npm run` to see more run options
 
 ## Feedback
 Testcafe is really good; I used it for years but it has two issues that ultimately became deal-breakers for me:
